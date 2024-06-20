@@ -78,7 +78,9 @@ function calculateFinalPrice(age, price) {
   }
 }   */
 
-// Prompt the user for a letter
+/* 
+
+//programa 4
 const letter = prompt("Enter a letter:");
 
 const lowerCaseLetter = letter.toLowerCase();
@@ -91,4 +93,63 @@ if (lowerCaseLetter === 'a' || lowerCaseLetter === 'e' || lowerCaseLetter === 'i
   } else {
     alert(`Invalid input. Please enter a letter.`);
   }
-}
+} */
+
+/*   
+//programa 5
+
+const dayNumber = parseInt(prompt("Enter a number between 1 and 7:"));
+
+if (dayNumber >= 1 && dayNumber <= 7) {
+ 
+  switch (dayNumber) {
+    case 1:
+      alert("Monday");
+      break;
+    case 2:
+      alert("Tuesday");
+      break;
+    case 3:
+      alert("Wednesday");
+      break;
+    case 4:
+      alert("Thursday");
+      break;
+    case 5:
+      alert("Friday");
+      break;
+    case 6:
+      alert("Saturday");
+      break;
+    case 7:
+      alert("Sunday");
+      break;
+  }
+} else {
+  alert("Invalid input. Please enter a number between 1 and 7.");
+} */
+
+//programa 6
+
+// Function to check if a number is prime
+function isPrime(n) {
+    if (n <= 1) {
+      return false; // 0 and 1 are not prime numbers
+    }
+    for (let i = 2; i * i <= n; i++) {
+      if (n % i === 0) {
+        return false; // if n is divisible by any number between 2 and sqrt(n), it's not prime
+      }
+    }
+    return true; // if n is not divisible by any number between 2 and sqrt(n), it's prime
+  }
+  
+  // Prompt the user for a number
+  const num = parseInt(prompt("Enter a number:"));
+  
+  // Check if the input is a prime number
+  if (isPrime(num)) {
+    alert(`${num} is a prime number.`);
+  } else {
+    alert(`${num} is not a prime number.`);
+  }
