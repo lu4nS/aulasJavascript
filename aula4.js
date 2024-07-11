@@ -30,7 +30,8 @@ var aula4 = {
         while (true) {
             let guessNumber = prompt("try to guess the number from 1 to 10")
             if (isNaN(parseFloat(guessNumber))) {
-                alert("not a number");
+                alert("not a number! program has stopped");
+                break
             } else {
                 if (guessNumber == randomNumber) {
                     alert("Right shot!")
