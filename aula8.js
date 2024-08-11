@@ -1,3 +1,4 @@
+var clicks = 0;
 var aula8 = {
   function1() {
     const button = document.getElementById("function1Button");
@@ -68,34 +69,53 @@ var aula8 = {
   },
 
   function5() {
-    var clicks = 0;
-    let ulElement;
-
+    const anchor = document.getElementById('function5Anchor')
     clicks++;
 
     if (clicks === 1) {
-      ulElement = document.createElement("ul");
-      ulElement.innerHTML = `
-        <li class="item">Vermelho</li>
-        <li>Azul</li>
-        <li class="item">Verde</li>
-        <li>Amarelo</li>
-      `;
-      document
-        .getElementById("function5Anchor")
-        .insertAdjacentElement("afterend", ulElement);
+      anchor.insertAdjacentElement("afterend", this.functionCreateUL());
     } else if (clicks === 2) {
-      const lis = ulElement.querySelectorAll("li");
+      const lis = anchor.parentNode.querySelectorAll('ul li')
       lis.forEach((li) => {
         if (!li.classList.contains("item")) {
           li.style.display = "none";
         }
       });
     } else if (clicks === 3) {
-      ulElement.parentNode.removeChild(ulElement);
+      anchor.parentNode.removeChild(document.getElementsByTagName('ul')[0])
       clicks = 0;
     }
   },
 
-  function6() {},
+  function6() {
+    alert('ATENZIONE, GAMBIARRA IN THE POCKEEEEET!')
+    const anchor = document.getElementById('function6Anchor')
+    clicks++;
+
+    if (clicks === 1) {
+      anchor.insertAdjacentElement("afterend", this.functionCreateUL());
+    } else if (clicks === 2) {
+      const lis = anchor.parentNode.querySelectorAll('ul li')
+      lis.forEach((li) => {
+        if (!li.classList.contains("item")) {
+          li.textContent = li.textContent + " not item"
+        }
+      });
+    } else if (clicks === 3) {
+      anchor.parentNode.removeChild(document.getElementsByTagName('ul')[0])
+      clicks = 0;
+    }
+  },
+
+  functionCreateUL() {
+    const ulElement = document.createElement("ul");
+    ulElement.innerHTML = `
+        <li class="item">Vermelho</li>
+        <li>Azul</li>
+        <li class="item">Verde</li>
+        <li>Amarelo</li>
+      `;
+
+    return ulElement
+  }
 };
